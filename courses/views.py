@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def hello(request):
-    return HttpResponse("Hello World in Django!")
+    return render(request, 'base.html', context={'var': 'Django!'})

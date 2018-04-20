@@ -39,7 +39,7 @@ class Module(models.Model):
     order = models.PositiveIntegerField(default=0)                      # Campo para ordenar los modulos
 
     class Meta:
-        ordering = ['order']
+        ordering = ('order',)
         verbose_name = 'Módulo'
         verbose_name_plural = 'Módulos'
 

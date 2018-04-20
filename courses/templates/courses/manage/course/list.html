@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head-title %}Mis cursos{% endblock %}
+
+{% block content %}
+    <h1>Mis Cursos</h1>
+    <div class="module">
+        {% for course in object_list %}
+            <div class="course-info">
+                <h3>{{ course.title }}</h3>
+                <p>
+                    <a href="#">Edit</a>
+                    <a href="#">Delete</a>
+                    <a href="#">Edit modules</a>
+                    {% if course.modules.count > 0 %}
+                        <a href="#">Manage contents</a>
+                    {% endif %}
+                </p>
+            </div>
+        {% empty %}
+            <p>You haven't created any courses yet.</p>
+        {% endfor %}
+        <p>
+            <a href="#" class="button">Create new course</a>
+        </p>
+    </div>
+{% endblock %}

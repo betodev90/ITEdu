@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDUCA IT |{% block head-title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheets.css' %}">
+    {% block extra-css %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+        <h2>Hello world {{ var }}</h2>
+
+    {% block extra-js %}{% endblock %}
+</body>
+</html>
