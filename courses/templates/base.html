@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IT EDUCA |{% block head-title %}{% endblock %}</title>
+    <title>IT EDUCA |{% block head-title %}Inicio{% endblock %}</title>
     <link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'libs/jquery-ui/css/jquery-ui.min.css' %}">
@@ -26,11 +26,14 @@
     </div>
 
     {# menu #}
-
-    <div id="content">
-        <h2>Hello world {{ var }}</h2>
+    <div class="container">
         {% block content %}
         {% endblock %}
+        <div id="content">
+            <div class="row">
+                <h2>Hello world {{ var }}</h2>
+            </div>
+        </div>
     </div>
 
 
