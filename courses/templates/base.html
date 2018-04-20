@@ -3,15 +3,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EDUCA IT |{% block head-title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/stylesheets.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT EDUCA |{% block head-title %}{% endblock %}</title>
+    <link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/jquery-ui/css/jquery-ui.min.css' %}">
     {% block extra-css %}{% endblock %}
 </head>
 <body>
-    {% block content %}{% endblock %}
+    {# header #}
+    <div id="header">
+        <a href="/" class="logo">EDU IT</a>
+        <ul class="menu">
+            <li>
+                <a href="">Salir</a>
+            </li>
+            <li>
+                <a href="">Iniciar sesión</a>
+            </li>
+        </ul>
+    </div>
 
+    {# menu #}
+
+    <div id="content">
         <h2>Hello world {{ var }}</h2>
+        {% block content %}
+        {% endblock %}
+    </div>
 
+
+    {# Import script jquery #}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'libs/jquery-ui/js/jquery-ui.min.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            {% block domready %}
+            {% endblock %}
+        });
+    </script>
     {% block extra-js %}{% endblock %}
 </body>
 </html>
