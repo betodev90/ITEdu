@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head-title %}Eliminar curso{% endblock %}
+
+{% block content %}
+    <h1>Eliminar curso "{{ object.title }}"</h1>
+
+    <div class="module">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Está  seguro que desea eliminar "{{ object }}"?</p>
+            <input type="submit" class="button" value="Confirmar" />
+        </form>
+        <a class="button" style="background: lightslategray" href="{% url 'courses:manage_course_list' %}">Regresar</a>
+    </div>
+{% endblock %}

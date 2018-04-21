@@ -9,19 +9,19 @@
             <div class="course-info">
                 <h3>{{ course.title }}</h3>
                 <p>
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
-                    <a href="#">Edit modules</a>
+                    <a href="{% url 'courses:course_edit' course.pk %}">Edit</a>
+                    <a href="{% url 'courses:course_delete' course.pk %}">Delete</a>
+                    <a href="{% url 'courses:course_module_update' course.pk %}">Edit modules</a>
                     {% if course.modules.count > 0 %}
                         <a href="#">Manage contents</a>
                     {% endif %}
                 </p>
             </div>
         {% empty %}
-            <p>You haven't created any courses yet.</p>
+            <p>No tiene creado ningún curso todavía.</p>
         {% endfor %}
         <p>
-            <a href="#" class="button">Create new course</a>
+            <a href="{% url 'courses:course_create' %}" class="button">Create new course</a>
         </p>
     </div>
 {% endblock %}

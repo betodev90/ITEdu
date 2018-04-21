@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.auth import views as auth_views     # importa la vista de autenticacion de django
+
+from security.views import Login
+from home.views import HomeView
+from courses.views import CourseListView
 
 urlpatterns = [
+    url(r'^$', Login.as_view(), name='login'),
+    url(r'^inicio/$', HomeView.as_view(), name='inicio'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', admin.site.urls),
     url(r'^cursos/', include('courses.urls', namespace='courses')),
+    url(r'^c/$', CourseListView.as_view(), name='course_list'),
+
 ]

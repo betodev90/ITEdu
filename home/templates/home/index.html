@@ -1,0 +1,27 @@
+{% extends 'home_base.html' %}
+
+{% block content %}
+    <hr>
+    <div class="container">
+      <h1 class="display-3">Bienvenidos a su sistema de E-Learning</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Asignaturas</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">Acceda a las asignaturas »</a></p>
+        </div>
+        <div class="col-md-6">
+            <h2>Cursos</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="{% url 'courses:manage_course_list' %}" role="button">Acceda a los cursos »</a></p>
+          </div>
+    </div>
+    <hr>
+    <footer class="container">
+      <p>© Company 2018</p>
+    </footer>
+{% endblock %}

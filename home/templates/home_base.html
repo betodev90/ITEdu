@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IT EDUCA |{% block head-title %}Inicio{% endblock %}</title>
+    <title>IT EDUCA |{% block title %}Inicio{% endblock %}</title>
     <link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'libs/jquery-ui/css/jquery-ui.min.css' %}">
@@ -16,15 +16,12 @@
     <div id="header">
         <a href="/" class="logo">EDU IT</a>
         <ul class="menu">
-            {% if request.user.is_authenticated %}
-                <li>
-                    <a href="{% url 'logout' %}">Salir</a>
-                </li>
-            {% else %}
-                <li>
-                    <a href="{% url 'login' %}">Iniciar sesión</a>
-                </li>
-            {% endif %}
+            <li>
+                <a href="">Salir</a>
+            </li>
+            <li>
+                <a href="">Iniciar sesión</a>
+            </li>
         </ul>
     </div>
 
